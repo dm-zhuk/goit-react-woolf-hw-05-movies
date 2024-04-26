@@ -1,0 +1,30 @@
+.wrapper {
+    padding: 0 24px;
+    align-items: baseline;
+}
+
+h2 {
+    color: #1b1050;
+    margin: 24px;
+}
+
+/* .button {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    border: 0;
+    background-image: url('../img/trending.svg');
+    background-repeat: no-repeat;
+    background-size: 40%;
+    background-position: center;
+    opacity: 0.6;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    outline: none;
+
+    &:hover,
+    &:focus {
+        opacity: 1;
+        transform: scale(1.15);
+    }
+} */

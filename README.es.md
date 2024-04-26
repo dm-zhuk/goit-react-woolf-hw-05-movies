@@ -7,22 +7,23 @@ para familiarizarse con las funciones opcionales y configurarlas.
 
 ## Crear un repositorio desde una plantilla
 
-Usa este repositorio de la organización GoIT como plantilla para crear el repositorio de tu proyecto. 
-Para hacer esto, haz clic en `«Use this template»` y selecciona la opción
-`«Create a new repository»`, tal como se muestra en la imagen.
+Usa este repositorio de la organización GoIT como plantilla para crear el
+repositorio de tu proyecto. Para hacer esto, haz clic en `«Use this template»` y
+selecciona la opción `«Create a new repository»`, tal como se muestra en la
+imagen.
 
 ![Creating repo from a template step 1](./assets/template-step-1.png)
 
-Para el siguiente paso deberás abrir la página para crear un nuevo repositorio. 
+Para el siguiente paso deberás abrir la página para crear un nuevo repositorio.
 Ponle nombre, asegúrate de que el repositorio sea público y haz clic en el botón
 `«Create repository from template»`.
 
 ![Creating repo from a template step 2](./assets/template-step-2.png)
 
-Ahora ya tienes un repositorio de proyecto personal, junto a una estructura de 
-archivos y carpetas del repositorio de plantillas. Luego trabaja con esto, así 
-como con cualquier otro repositorio personal, realiza una copia en tu computadora 
-y súbelo a GitHub.
+Ahora ya tienes un repositorio de proyecto personal, junto a una estructura de
+archivos y carpetas del repositorio de plantillas. Luego trabaja con esto, así
+como con cualquier otro repositorio personal, realiza una copia en tu
+computadora y súbelo a GitHub.
 
 ## Prepararse para el trabajo
 
@@ -74,10 +75,10 @@ en la dirección especificada en la propiedad `homepage`. Por ejemplo, aquí est
 el enlace a la versión activa de este repositorio
 [https://goitacademy.github.io/react-homework-template](https://goitacademy.github.io/react-homework-template).
 
-Si se abre una página en blanco, asegúrate de que no haya errores en la pestaña
-`Console` relacionados con rutas incorrectas de archivos CSS y JS del proyecto
-(**404**). Probablemente tienes un valor incorrecto para la propiedad `homepage`
-en el archivo `package.json`.
+Si se abre una página en blanco, asegúrate de que no haya erroresponseen la
+pestaña `Console` relacionados con rutas incorrectas de archivos CSS y JS del
+proyecto (**404**). Probablemente tienes un valor incorrecto para la propiedad
+`homepage` en el archivo `package.json`.
 
 ### Enrutamiento
 
