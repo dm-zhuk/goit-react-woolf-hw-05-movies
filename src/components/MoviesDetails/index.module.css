@@ -1,0 +1,98 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px;
+    background-color: #e4e9ea;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.detailsWrapper {
+    display: flex;
+}
+
+.poster {
+    flex: 0 0 auto;
+    height: 460px;
+    margin-right: 24px;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 8px;
+    position: relative;
+}
+
+.movieContent {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.movieTitle {
+    margin-top: 0;
+    margin-bottom: 24px;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.subTitle {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.subTitleScore {
+    font-size: 20px;
+    font-weight: 600;
+    margin-right: 4px;
+}
+
+.overview {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 24px;
+}
+
+.flex {
+    display: flex;
+    align-items: baseline;
+}
+
+.addInfo {
+    width: 100%;
+    margin-top: 24px;
+}
+
+.infoTitle {
+    margin-bottom: 12px;
+}
+
+.infoList {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+.infoItem {
+    margin-right: 12px;
+}
+
+.backLink {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 100px;
+    margin: 24px 0 24px;
+    padding: 8px 16px;
+    border-radius: 6px;
+    background-color: #c6ecf6;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    color: #333;
+    text-decoration: none;
+    font-size: medium;
+    font-weight: 500;
+}
+
+.backLink:hover {
+    background-color: #1BB7DC;
+}

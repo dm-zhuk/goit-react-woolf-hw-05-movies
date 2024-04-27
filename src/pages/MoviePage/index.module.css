@@ -1,15 +1,16 @@
 .searchContainer {
     display: flex;
     align-items: center;
-    margin: 24px;
+    margin: 42px;
 }
 
 .searchInput {
-    width: 360px;
-    padding: 8px 16px;
-    border: 1px solid #1BB7DC;
-    border-radius: 4px;
-    flex: 1;
+    width: 420px;
+    padding: 16px;
+    border: 1.6px solid #1BB7DC;
+    border-radius: 24px;
+    font-size: large;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
 .searchButton {
@@ -23,6 +24,10 @@
     border: none;
     border-radius: 4px;
     cursor: pointer;
+
+    &:hover {
+        transform: scale(1.2);
+    }
 }
 
 .searchButton img {

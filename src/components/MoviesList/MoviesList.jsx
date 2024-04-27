@@ -20,7 +20,7 @@ const MoviesList = ({ movies }) => {
 
   return (
     <div className={styles.header}>
-      <ul className={styles.ul}>
+      <ul className={styles.ulList}>
         {movies.map(movie => (
           <li className={styles.listItem} key={movie.id}>
             <Link
@@ -29,6 +29,7 @@ const MoviesList = ({ movies }) => {
               state={{ from: location.pathname + location.search }}
             >
               <img
+                className={styles.imgItem}
                 src={
                   movie.poster_path
                     ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`

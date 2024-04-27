@@ -45,7 +45,7 @@ const MoviePage = () => {
             type="text"
             value={query}
             onChange={e => setQuery(e.target.value)}
-            placeholder="Search movies..."
+            placeholder="Search for a movie..."
           />
           <button className={styles.searchButton} type="submit">
             <img src="" alt="" />

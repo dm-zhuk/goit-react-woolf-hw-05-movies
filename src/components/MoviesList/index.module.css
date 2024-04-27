@@ -1,25 +1,47 @@
-ul {
-    display: flex;
+.header {
+    display: inline-block;
+    width: 100%;
+}
+
+.ulList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+    justify-content: center;
+    align-items: stretch;
 }
 
 .listItem {
-    margin: 0;
-    padding: 0;
-    border-width: 0;
-    outline: 0;
-    text-decoration: none;
-    font: inherit;
-    list-style: none;
+    border: 1px solid #1BB7DC;
+    overflow: hidden;
+    border-radius: 2px;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+        0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-between;
+    width: 220px;
+    margin-bottom: 20px;
+
+    &:hover {
+        background-color: #67e1ff;
+        transform: scale(1.03);
+    }
+}
+
+.imgItem {
+    width: 100%;
+    object-fit: cover;
 }
 
 .list {
     height: auto;
 }
 
-.header {
-    display: inline-block;
-    width: 100%;
-}
 
 .link {
     display: block;
@@ -27,11 +49,13 @@ ul {
     text-decoration: none;
 }
 
-h3 {
+.movieTitle {
     padding: 12px;
     margin: 16px;
+    font-size: medium;
     text-align: center;
     overflow: hidden;
+
     white-space: nowrap;
     text-overflow: ellipsis;
 }

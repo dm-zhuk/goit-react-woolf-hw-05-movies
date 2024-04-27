@@ -1,17 +1,27 @@
 import React from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
+import tmdbLogo from 'img/tmovdb.svg';
 import styles from './index.module.css';
 
 const SharedLayout = () => {
   return (
     <>
-      <div>
-        <nav>
-          <Link to="/">Home</Link>
-          <Link to="/movies">Movies</Link>
+      <header className={styles.header}>
+        <span className={styles.logo}>
+          <img src={tmdbLogo} alt="TMDB Logo" className={styles.logoImg} />
+        </span>
+        <nav className={styles.nav}>
+          <NavLink to="/" className={styles.link}>
+            Home
+          </NavLink>
+          <NavLink to="/movies" className={styles.link}>
+            Movies
+          </NavLink>
         </nav>
+      </header>
+      <section className={styles.homeSection}>
         <Outlet />
-      </div>
+      </section>
     </>
   );
 };

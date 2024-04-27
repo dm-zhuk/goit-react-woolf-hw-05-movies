@@ -21,7 +21,7 @@ const HomePage = () => {
 
   return (
     <div className={styles.wrapper}>
-      <h2>🔍 Trending Today</h2>
+      <h1>🔍 Trending Today</h1>
       <MoviesList movies={movies} />
     </div>
   );
