@@ -1,7 +1,7 @@
 import React, { Suspense, useState, useEffect, useRef } from 'react';
 import { useLocation, useParams, NavLink, Outlet } from 'react-router-dom';
 import { getMovieDetails, handleApiError } from 'components/services/api';
-import MovieDetailAddInfo from 'components/MovieDetailAddInfo/MovieDetailAddInfo';
+import MovieAdditionalInfo from 'components/MovieAdditionalInfo/MovieAdditionalInfo';
 import styles from './index.module.css';
 
 const MovieDetails = () => {
@@ -45,7 +45,7 @@ const MovieDetails = () => {
           {''}
           🔙 Go back
         </NavLink>
-        {movie && <MovieDetailAddInfo movie={movie} />}
+        {movie && <MovieAdditionalInfo movie={movie} />}
         <Suspense
           fallback={
             <h2 style={{ margin: '96px 42px', color: '#1BB7DC' }}>

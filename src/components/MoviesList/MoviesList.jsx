@@ -7,14 +7,6 @@ const MoviesList = ({ movies }) => {
   const defaultImg =
     'https://glavcom.ua/img/article/9139/95_main-v1678685008.jpg';
 
-  if (!movies || movies.length === 0) {
-    return (
-      <h2 style={{ margin: '76px 48px', color: '#1BB7DC' }}>
-        Make a new query...
-      </h2>
-    );
-  }
-
   return (
     <div className={styles.header}>
       <ul className={styles.ulList}>

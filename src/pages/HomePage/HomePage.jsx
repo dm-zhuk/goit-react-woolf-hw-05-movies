@@ -32,7 +32,7 @@ const HomePage = () => {
   return (
     <div className={styles.wrapper}>
       <h2>🔍 Trending Today</h2>
-      <MoviesList movies={movies} />
+      {movies && <MoviesList movies={movies} />}
     </div>
   );
 };

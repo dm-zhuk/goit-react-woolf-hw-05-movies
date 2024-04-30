@@ -56,6 +56,7 @@ const MoviePage = () => {
           <input
             className={styles.searchInput}
             type="text"
+            autoComplete="off"
             value={query}
             onChange={e => setQuery(e.target.value)}
             placeholder="Search for a movie..."
