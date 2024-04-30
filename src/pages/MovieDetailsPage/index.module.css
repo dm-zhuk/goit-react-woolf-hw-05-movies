@@ -1,0 +1,42 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px 24px;
+    background-color: #e4e9ea;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.backBtnDiv {
+    padding: 56px 24px;
+}
+
+.detailsWrapper {
+    display: flex;
+}
+
+.link {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 100px;
+    margin: 24px 0 24px;
+    padding: 8px 16px;
+    border-radius: 6px;
+    background-color: #c6ecf6;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    color: #333;
+    text-decoration: none;
+    font-size: medium;
+    font-weight: 500;
+}
+
+.urlBackBtn:hover {
+    background-color: #1BB7DC;
+}
+
+.err {
+    margin: 116px 42px;
+    color: #dc4b1b;
+}

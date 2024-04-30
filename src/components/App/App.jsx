@@ -1,14 +1,12 @@
-//
 import React, { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import 'normalize.css';
 
 const SharedLayout = lazy(() => import('layouts/MainLayout/SharedLayout'));
 const HomePage = lazy(() => import('pages/HomePage/HomePage'));
 const MoviePage = lazy(() => import('pages/MoviePage/MoviePage'));
 const NotFoundPage = lazy(() => import('pages/NotFoundPage/NotFoundP'));
-const MovieDetails = lazy(() =>
-  import('components/MoviesDetails/MoviesDetails')
-);
+const MovieDetails = lazy(() => import('pages/MovieDetailsPage/MoviesDetails'));
 const Cast = lazy(() => import('components/Cast/Cast'));
 const Reviews = lazy(() => import('components/Reviews/Reviews'));
 

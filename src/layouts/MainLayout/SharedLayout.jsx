@@ -7,7 +7,7 @@ const SharedLayout = () => {
   return (
     <>
       <header className={styles.header}>
-        <span className={styles.logo}>
+        <span>
           <img src={tmdbLogo} alt="TMDB Logo" className={styles.logoImg} />
         </span>
         <nav className={styles.nav}>

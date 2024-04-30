@@ -1,6 +1,7 @@
 .searchContainer {
     display: flex;
     align-items: center;
+    padding-top: 56px;
     margin: 42px;
 }
 
@@ -20,9 +21,8 @@
     background-position: center;
     background-color: transparent;
     width: 60px;
-    padding: 8px;
+    padding: 24px;
     border: none;
-    border-radius: 4px;
     cursor: pointer;
 
     &:hover {

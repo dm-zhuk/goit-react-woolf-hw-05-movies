@@ -1,17 +1,18 @@
 .header {
     display: flex;
-    align-items: center;
-    padding: 36px 42px;
+    padding: 24px 42px;
     background-color: #333;
-}
 
-.logo {
-    display: flex;
-    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.24);
 }
 
 .logoImg {
-    height: 28px;
+    height: 24px;
     margin-right: 36px;
 }
 

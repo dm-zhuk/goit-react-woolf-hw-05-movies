@@ -1,16 +1,5 @@
-//  Створення списку фільмів на сторінках Home, Movies виносимо в окремий компонент MoviesList
-
-// Ось простий спосіб перетворити екземпляр класу URLSearchParams у звичайний об'єкт із властивостями
-
-/* const [searchParams] = useSearchParams();
-const params = useMemo(
-  () => Object.fromEntries([...searchParams]),
-  [searchParams]
-);
-const { name, maxPrice, inStock } = params; */
-
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import styles from './index.module.css';
 
 const MoviesList = ({ movies }) => {
@@ -18,28 +7,38 @@ const MoviesList = ({ movies }) => {
   const defaultImg =
     'https://glavcom.ua/img/article/9139/95_main-v1678685008.jpg';
 
+  if (!movies || movies.length === 0) {
+    return (
+      <h2 style={{ margin: '76px 48px', color: '#1BB7DC' }}>
+        Make a new query...
+      </h2>
+    );
+  }
+
   return (
     <div className={styles.header}>
       <ul className={styles.ulList}>
-        {movies.map(movie => (
-          <li className={styles.listItem} key={movie.id}>
-            <Link
+        {movies.map(({ id, poster_path, name, title }) => (
+          <li className={styles.listItem} key={id}>
+            <NavLink
               className={styles.link}
-              to={`/movies/${movie.id}`}
+              to={`/movies/${id}`}
               state={{ from: location.pathname + location.search }}
             >
               <img
                 className={styles.imgItem}
                 src={
-                  movie.poster_path
-                    ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+                  poster_path
+                    ? `https://image.tmdb.org/t/p/w500${poster_path}`
                     : defaultImg
                 }
-                alt={movie.title || movie.name}
+                alt={name}
                 width={250}
+                height={330}
+                loading="lazy"
               />
-              <h3 className={styles.movieTitle}>{movie.title || movie.name}</h3>
-            </Link>
+              <h3 className={styles.movieTitle}>{name || title}</h3>
+            </NavLink>
           </li>
         ))}
       </ul>

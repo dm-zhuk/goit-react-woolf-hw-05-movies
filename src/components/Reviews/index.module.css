@@ -1,0 +1,28 @@
+.reviewsList {
+    padding: 0;
+    list-style-type: none;
+}
+
+.reviewsItem {
+    margin-bottom: 16px;
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    &:not(:last-child) {
+        margin-bottom: 8px;
+    }
+}
+
+.reviewsAuthor {
+    margin: 0 0 12px 0;
+}
+
+.reviewsContent {
+    margin: 0;
+    white-space: pre-line;
+    padding: 12px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}

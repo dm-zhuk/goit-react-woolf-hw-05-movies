@@ -1,41 +1,54 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate, useLocation, useSearchParams } from 'react-router-dom';
-import { searchMovies } from 'components/services/api';
+import { useNavigate, useSearchParams } from 'react-router-dom';
+import { searchMovies, handleApiError } from 'components/services/api';
 import MoviesList from 'components/MoviesList/MoviesList';
 import styles from './index.module.css';
 
 const MoviePage = () => {
-  const location = useLocation();
   const navigate = useNavigate();
   const [query, setQuery] = useState('');
   const [searchRes, setSearchRes] = useState([]);
   const [searchParams] = useSearchParams();
   const searchQuery = searchParams.get('query');
-
-  console.log(location.state);
+  const [errorMsg, setErrorMsg] = useState('');
 
   useEffect(() => {
-    if (searchQuery) {
-      searchMovies(searchQuery)
-        .then(({ response }) => {
-          setSearchRes(response);
-        })
-        .catch(console.error);
-    }
+    const fetchData = async () => {
+      if (searchQuery) {
+        try {
+          const { results } = await searchMovies(searchQuery);
+          setSearchRes(results);
+        } catch (error) {
+          setErrorMsg(
+            handleApiError(error, 'Error fetching the movie you requested')
+          );
+        }
+      }
+    };
+
+    fetchData();
   }, [searchQuery]);
 
   const handleSearch = async e => {
     e.preventDefault();
     if (!query) return;
     try {
-      const { response } = await searchMovies(query);
-      setSearchRes(response);
+      const { results } = await searchMovies(query);
+      setSearchRes(results);
       navigate(`/movies?query=${query}`);
     } catch (error) {
-      console.error(error.message);
+      setErrorMsg(error.message);
     }
   };
 
+  if (errorMsg) {
+    return (
+      <div className={styles.wrapper}>
+        <h2>😞 Error</h2>
+        <div>{errorMsg}</div>
+      </div>
+    );
+  }
   return (
     <>
       <div className={styles.searchContainer}>
@@ -47,12 +60,10 @@ const MoviePage = () => {
             onChange={e => setQuery(e.target.value)}
             placeholder="Search for a movie..."
           />
-          <button className={styles.searchButton} type="submit">
-            <img src="" alt="" />
-          </button>
+          <button className={styles.searchButton} type="submit"></button>
         </form>
       </div>
-      <MoviesList movies={searchRes} />
+      {searchRes && <MoviesList movies={searchRes} />}
     </>
   );
 };

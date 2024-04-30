@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useSearchParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { getMovieCredits } from 'components/services/api';
 import styles from './index.module.css';
 
 const Cast = () => {
   const { movieId } = useParams();
   const [cast, setCast] = useState([]);
-  const imgDefault = 'https://placehold.it/90x120';
+  const imgDefault = 'https://placehold.it/100x150';
 
   useEffect(() => {
     const fetchCast = async () => {
@@ -22,11 +22,12 @@ const Cast = () => {
 
   return (
     <div className={styles.castSection}>
-      <h2>Top Billed Cast</h2>
-      <ul>
+      <h2 className={styles.castTitle}>Top Billed Cast</h2>
+      <ul className={styles.castList}>
         {cast.map(actor => (
-          <li key={actor.cast_id}>
+          <li className={styles.castItem} key={actor.cast_id}>
             <img
+              className={styles.castImg}
               src={
                 actor.profile_path
                   ? `https://image.tmdb.org/t/p/w200${actor.profile_path}`
@@ -34,8 +35,10 @@ const Cast = () => {
               }
               alt={actor.name}
             />
-            <h3>{actor.name}</h3>
-            <p>as {actor.character}</p>
+            <section className={styles.castSign}>
+              <h5 className={styles.castName}>{actor.name}</h5>
+              <h6 className={styles.castCharacter}>as {actor.character}</h6>
+            </section>
           </li>
         ))}
       </ul>
