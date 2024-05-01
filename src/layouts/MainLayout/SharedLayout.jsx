@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import tmdbLogo from 'img/tmovdb.svg';
 import styles from './index.module.css';
@@ -20,7 +20,9 @@ const SharedLayout = () => {
         </nav>
       </header>
       <section className={styles.homeSection}>
-        <Outlet />
+        <Suspense fallback={<h2 className={styles.loader}>Loading...</h2>}>
+          <Outlet />
+        </Suspense>
       </section>
     </>
   );

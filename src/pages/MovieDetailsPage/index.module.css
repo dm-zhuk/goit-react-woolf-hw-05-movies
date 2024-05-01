@@ -37,6 +37,13 @@
 }
 
 .err {
-    margin: 116px 42px;
+    display: flex;
+    margin: 96px 142px;
+    width: 330px;
     color: #dc4b1b;
+}
+
+.loader {
+    margin: 296px 342px;
+    color: #1BB7DC;
 }

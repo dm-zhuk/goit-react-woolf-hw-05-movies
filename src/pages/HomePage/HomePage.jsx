@@ -22,9 +22,8 @@ const HomePage = () => {
 
   if (errorMsg) {
     return (
-      <div className={styles.wrapper}>
-        <h2>😞 Error</h2>
-        <div>{errorMsg}</div>
+      <div className={styles.err}>
+        <h4>{errorMsg}</h4>
       </div>
     );
   }
@@ -32,7 +31,7 @@ const HomePage = () => {
   return (
     <div className={styles.wrapper}>
       <h2>🔍 Trending Today</h2>
-      {movies && <MoviesList movies={movies} />}
+      {movies.length > 0 && <MoviesList movies={movies} />}
     </div>
   );
 };

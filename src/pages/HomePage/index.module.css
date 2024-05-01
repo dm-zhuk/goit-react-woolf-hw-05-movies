@@ -7,3 +7,10 @@ h1 {
     color: #1b1050;
     margin: 24px;
 }
+
+.err {
+    display: flex;
+    margin: 96px 142px;
+    width: 330px;
+    color: #dc4b1b;
+}

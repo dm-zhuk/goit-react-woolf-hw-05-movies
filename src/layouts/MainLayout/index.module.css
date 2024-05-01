@@ -45,3 +45,8 @@ nav {
     flex: 1;
     padding: 1rem;
 }
+
+.loader {
+    margin: 296px 342px;
+    color: #1BB7DC;
+}

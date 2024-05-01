@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import { searchMovies, handleApiError } from 'components/services/api';
 import MoviesList from 'components/MoviesList/MoviesList';
 import styles from './index.module.css';
 
 const MoviePage = () => {
-  const navigate = useNavigate();
   const [query, setQuery] = useState('');
   const [searchRes, setSearchRes] = useState([]);
-  const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
   const searchQuery = searchParams.get('query');
   const [errorMsg, setErrorMsg] = useState('');
 
@@ -29,26 +28,21 @@ const MoviePage = () => {
     fetchData();
   }, [searchQuery]);
 
-  const handleSearch = async e => {
+  const handleSearch = e => {
     e.preventDefault();
     if (!query) return;
-    try {
-      const { results } = await searchMovies(query);
-      setSearchRes(results);
-      navigate(`/movies?query=${query}`);
-    } catch (error) {
-      setErrorMsg(error.message);
-    }
+    setSearchParams({ query });
+    setQuery('');
   };
 
   if (errorMsg) {
     return (
       <div className={styles.wrapper}>
-        <h2>😞 Error</h2>
         <div>{errorMsg}</div>
       </div>
     );
   }
+
   return (
     <>
       <div className={styles.searchContainer}>
@@ -64,7 +58,7 @@ const MoviePage = () => {
           <button className={styles.searchButton} type="submit"></button>
         </form>
       </div>
-      {searchRes && <MoviesList movies={searchRes} />}
+      <MoviesList movies={searchRes} />
     </>
   );
 };
