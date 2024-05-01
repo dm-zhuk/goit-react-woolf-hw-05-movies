@@ -31,7 +31,7 @@ const HomePage = () => {
   return (
     <div className={styles.wrapper}>
       <h2>🔍 Trending Today</h2>
-      {movies.length > 0 && <MoviesList movies={movies} />}
+      <MoviesList movies={movies} />
     </div>
   );
 };
