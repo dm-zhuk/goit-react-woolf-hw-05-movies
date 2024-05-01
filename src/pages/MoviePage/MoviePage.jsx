@@ -7,9 +7,9 @@ import styles from './index.module.css';
 const MoviePage = () => {
   const [query, setQuery] = useState('');
   const [searchRes, setSearchRes] = useState([]);
+  const [errorMsg, setErrorMsg] = useState('');
   const [searchParams, setSearchParams] = useSearchParams();
   const searchQuery = searchParams.get('query');
-  const [errorMsg, setErrorMsg] = useState('');
 
   useEffect(() => {
     const fetchData = async () => {

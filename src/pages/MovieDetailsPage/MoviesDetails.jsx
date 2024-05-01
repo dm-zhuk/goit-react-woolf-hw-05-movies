@@ -45,7 +45,7 @@ const MovieDetails = () => {
         <NavLink to={urlBackBtn.current} className={styles.link}>
           🔙 Go back
         </NavLink>
-        <MovieAdditionalInfo movie={movie} />
+        {movie && <MovieAdditionalInfo movie={movie} />}
         <Outlet />
       </div>
     </div>
