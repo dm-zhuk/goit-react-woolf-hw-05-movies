@@ -6,7 +6,9 @@ import App from 'components/App/App';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter basename="/dm-zhuk.github.io/goit-react-woolf-hw-05-movies">
+   <BrowserRouter basename="/goit-react-woolf-hw-05-movies/">
+      <App />
+    </BrowserRouter>
   <App />
 </BrowserRouter>
   </React.StrictMode>
