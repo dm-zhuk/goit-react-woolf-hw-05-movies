@@ -46,7 +46,7 @@ const MoviePage = () => {
   return (
     <>
       <div className={styles.searchContainer}>
-        <form onSubmit={handleSearch}>
+        <form className={styles.searchForm} onSubmit={handleSearch}>
           <input
             className={styles.searchInput}
             type="text"

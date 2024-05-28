@@ -1,8 +1,14 @@
 .searchContainer {
     display: flex;
-    align-items: center;
     padding-top: 56px;
     margin: 42px;
+    gap: 24px;
+}
+
+.searchForm {
+    display: flex;
+    align-items: center;
+    position: relative;
 }
 
 .searchInput {
@@ -15,6 +21,10 @@
 }
 
 .searchButton {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
     background-image: url('/src/img/icon-find.svg');
     background-repeat: no-repeat;
     background-size: 60%;
@@ -24,12 +34,4 @@
     padding: 24px;
     border: none;
     cursor: pointer;
-
-    &:hover {
-        transform: scale(1.2);
-    }
-}
-
-.searchButton img {
-    height: 32px;
 }
